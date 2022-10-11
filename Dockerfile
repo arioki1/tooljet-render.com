@@ -1,2 +1,4 @@
 FROM tooljet/tooljet-ce:latest
-ENTRYPOINT ["npm", "run","db:migrate:prod"]
+ls -lah
+chmod +x start_server.sh
+ENTRYPOINT ["./start_server.sh"]
