@@ -1,0 +1,19 @@
+databases:
+  - name: tooljet
+    databaseName: mysite
+    user: tooljet
+    plan: free
+
+
+services:
+  - type: web
+    name: tooljet
+    env: docker
+    dockerfilePath: Dockerfile
+    repo: https://github.com/arioki1/tooljet-render.com
+    region: oregon
+    branch: main
+    plan: free
+    dockerCommand: "npm run start:prod"
+    numInstances: 1
+    healthCheckPath: /
